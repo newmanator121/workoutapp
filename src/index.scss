@@ -1,0 +1,14 @@
+@import 'carbon-components/scss/globals/scss/styles.scss';
+@import "~@carbon/ibm-security/css/index.min.css";
+
+.security--card__header__title {
+  h1 {
+    color: white;
+  }
+}
+
+.security--card__body__text {
+  p {
+    color: white;
+  }
+}

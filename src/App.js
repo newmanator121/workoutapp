@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import './app.scss';
+import { Button } from 'carbon-components-react';
+import React from "react";
+import { Route, Switch } from 'react-router-dom';
+import LandingPage from "./Pages/components/LandingPage";
+import {FridayWorkout, MondayWorkout, RecoverySession, SaturdayWorkout, WednesdayWorkout} from "./Pages";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/Monday" component={MondayWorkout} />
+        <Route exact path="/Tuesday" component={RecoverySession} />
+        <Route exact path="/Wednesday" component={WednesdayWorkout} />
+        <Route exact path="/Thursday" component={RecoverySession} />
+        <Route exact path="/Friday" component={FridayWorkout} />
+        <Route exact path="/Saturday" component={SaturdayWorkout} />
+        <Route exact path="/Sunday" component={RecoverySession} />
+      </Switch>
     </div>
   );
 }
